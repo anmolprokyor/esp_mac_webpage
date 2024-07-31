@@ -1,0 +1,6 @@
+Wifi Name :- Airtel_harm_7181 // can be customised
+Password :- air29929
+
+To create a static webpage that can be viewed on same network by any IP:-
+Open command prompt; navigate to directory where html file is located; run the following command; python -m http.server 8000; locate the ip address of ur pc using ipconfig command;for example my ip is 192.168.1.16, then the tatic ip for website is http://192.168.1.16:8000/
+http://192.168.1.16:8000/ this can be accessed from anywhere within the same network.
