@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ESP8266 MAC Addresses</title>
+  <script>
+    var websocketServers = ["ws://192.168.1.29:81/", "ws://192.168.1.30:81/"]; 
+    var webSockets = [];
+
+    websocketServers.forEach(function(serverUrl) {
+      var websocket = new WebSocket(serverUrl);
+      webSockets.push(websocket);
+
+      websocket.onmessage = function(event) {
+        var macAddresses = document.getElementById("macAddresses");
+        var newMAC = document.createElement("li");
+        newMAC.textContent = event.data;
+        macAddresses.appendChild(newMAC);
+      };
+    });
+  </script>
+</head>
+<body>
+  <h1>Connected ESP8266 Devices</h1>
+  <ul id="macAddresses"></ul>
+</body>
+</html>
